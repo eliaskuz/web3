@@ -1,0 +1,87 @@
+@mixin triangle($direction, $sizeH, $sizeV, $color) {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    -moz-transform: scale(.9999);
+
+  @if $direction == top {
+    border-width: 0 $sizeV $sizeH $sizeV;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottom{
+    border-width: $sizeV $sizeH 0 $sizeV;
+    border-color: $color transparent transparent transparent;
+  }
+  @if $direction == left{
+    border-width: $sizeV $sizeH $sizeV 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == right{
+    border-width: $sizeV 0 $sizeV $sizeH;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == topright{
+    border-width: 0 $sizeH $sizeV 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == bottomright{
+    border-width: 0 0 $sizeH $sizeV;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottomleft{
+    border-width: $sizeH 0 0 $sizeV;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == topleft{
+    border-width: $sizeH $sizeV 0 0;
+    border-color: $color transparent transparent transparent;
+  }
+}
+@mixin gr($angle, $color-stops...) {
+  $_angle-with-vendor-prefix: "";
+  $_angle: "";
+  @if $angle == "to top" or $angle == "bottom" {
+    $_angle-with-vendor-prefix: bottom;
+    $_angle: to top;
+  } @else if $angle == "to right" or $angle == "left" {
+    $_angle-with-vendor-prefix: left;
+    $_angle: to right;
+  } @else if $angle == "to bottom" or $angle == "top" {
+    $_angle-with-vendor-prefix: top;
+    $_angle: to bottom;
+  } @else if $angle == "to left" or $angle == "right" {
+    $_angle-with-vendor-prefix: right;
+    $_angle: to left;
+  } @else if $angle == "to top right" or $angle == "bottom left" {
+    $_angle-with-vendor-prefix: bottom left;
+    $_angle: to top right;
+  } @else if $angle == "to bottom right" or $angle == "top left" {
+    $_angle-with-vendor-prefix: top left;
+    $_angle: to bottom right;
+  } @else if $angle == "to bottom left" or $angle == "top right" {
+    $_angle-with-vendor-prefix: top right;
+    $_angle: to bottom left;
+  } @else if $angle == "to top left" or $angle == "bottom right" {
+    $_angle-with-vendor-prefix: bottom right;
+    $_angle: to top left;
+  } @else {
+    $_angle-with-vendor-prefix: $angle % 360;
+    $_angle: (90 - $angle) % 360;
+  }
+  background: linear-gradient($_angle, $color-stops);
+}
+
+@mixin ellipse($size: 5rem, $color: black) {
+  border-radius: 50%;
+  display: flex;
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+@mixin break() {
+  word-break: break-word;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

@@ -1,0 +1,75 @@
+
+$itemSpace: .4rem;
+$iconPlaceRight: 1rem;
+$itemMinWidth: 32%;
+$itemHeight: 8.4rem;
+
+.priceList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 4.4rem;
+
+  li {
+    flex-basis: $itemMinWidth;
+    min-width: 20rem;
+    font-weight: bold;
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: $itemSpace;
+    height: $itemHeight;
+    background-color: $sweet;
+    border-radius: 4px;
+    color: black;
+    margin-right: $itemSpace;
+    position: relative;
+    @media (min-width: $desk) {
+      max-width: 32%;
+    }
+    &.disabled {
+      pointer-events: none;
+      &:before {
+        background-color: rgba(255,255,255, 0.5);
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+    input {
+      -webkit-appearance: radio;
+    }
+    &.active {
+      background-image: $primaryGradient;
+      color: white;
+    }
+
+
+    label {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      padding: 2rem;
+      cursor: pointer;
+      align-items: center;
+    }
+  }
+  & .iconPlace {
+    margin-right: $iconPlaceRight;
+    width: 3rem;
+    height: 3rem;
+  }
+  & .elem {
+    @include ellipse(2.5rem, black);
+    flex-shrink: 0;
+  }
+  & .radio-body {
+    display: flex;
+    align-items: center;
+    margin-left: 1.6rem;
+  }
+}

@@ -1,0 +1,90 @@
+$salesMarginTop: 5rem;
+$borderBoard: .3rem;
+$moveBoard: .5rem;
+$dashboardColor: $sweetMore;
+
+.sales {
+	margin-top: 2rem;
+  border-radius: 4px;
+  display: none;
+  padding: 2.5%;
+  background-color: $dashboardColor;
+
+  @media (min-width: $desk) {
+    display: flex;
+    justify-content: space-between;
+  }
+  & .percent-elem {
+    @include ellipse(4.2rem);
+    background-image: $primaryGradient;
+    position: absolute;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    top: -1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -1.6rem;
+    z-index: 1;
+
+  }
+
+  & .sale-board {
+	display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 5rem;
+  // box-shadow: 4px 5px 4px transparentize(black, .8);
+	flex-direction: column;
+
+
+    @media (min-width: $desk) {
+      width: 18%;
+      margin-bottom: 0;
+
+    }
+  }
+
+	& .date {
+		color: black;
+    font-weight: bold;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+
+	}
+
+  & .sale-board-header {
+    padding: 2.4rem 2rem 2rem 2rem;
+    background-color: $statisticHeaderColor;
+    color: white;
+    font-size: 1.6rem;
+    position: relative;
+    color: black;
+    font-weight: bold;
+
+  }
+  & .sum-text {
+    color: black;
+    font-weight: bold;
+    font-size: 1.6rem;
+    display: block;
+  }
+  & .line {
+		width: 100%;
+		height: $borderBoard;
+		background-color: $borderBoardColor;
+		border-radius: 10px;
+	}
+
+	& .sum {
+    padding: 1.5rem;
+		font-weight: bold;
+		font-size: 2.4rem;
+    color: $blueVariant1;
+    margin-bottom: .5rem;
+	}
+}

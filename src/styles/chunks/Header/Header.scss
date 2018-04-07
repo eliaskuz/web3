@@ -1,0 +1,121 @@
+$headerHeight: 12rem;
+$largeFont: 1.6rem;
+$smallFont: 1.4rem;
+
+.header-outside {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+   @media (min-width: $desk) {
+    position: static;
+  }
+}
+
+.header {
+  background-color: $blue;
+  height: 8rem;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+
+  & .header-row {
+    flex: 1;
+    flex-wrap: nowrap;
+  }
+  & .outer-logo {
+    padding-left: 2.4rem;
+    img {
+      max-width: 20rem;
+    }
+  }
+  & .trigger-ham {
+    align-self: center;
+    margin-right: 2rem;
+    cursor: pointer;
+    @media (min-width: $desk) {
+      display: none;
+    }
+  }
+
+  & .is-mobile-menu {
+    position: fixed;
+    flex-direction: column;
+    background-color: white;
+    visibility: hidden;
+    transition: .3s;
+    transform: translateX(100%);
+    justify-content: flex-start;
+    left: 0;
+    max-width: 100%;
+    bottom: 0;
+    top: 0;
+    z-index: 999;
+    font-size: 2rem;
+    &.open {
+       transform: translateX(0);
+       visibility: visible;
+    }
+    @media (min-width: $pad) {
+      font-size: 3rem;
+    }
+    @media (min-width: $desk) {
+      display: flex $i;
+      transition: none;
+      align-items: stretch;
+      visibility: visible;
+      flex-direction: row;
+      transform: none;
+      position: static;
+      font-size: 1.5rem;
+      background-color: transparent;
+
+    }
+  }
+
+  & .is-mobile-menu-list {
+    align-items: center;
+    justify-content: center;
+    order: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-grow: 1;
+
+   & .back {
+      cursor: pointer;
+    }
+
+    @media (min-width: $desk) {
+      order: 0;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  }
+  & .close {
+    height: 4rem;
+  }
+  & .closeOuter {
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+
+  & .icon-place {
+    margin-left: 1rem;
+  }
+  & .me {
+    color: $blackLight;
+    font-size: 2.2rem;
+    padding: 1rem 1rem 1rem 3rem;
+    flex: 1;
+    @media (min-width: $pad) {
+      max-width: 30rem;
+    }
+    background-color: #b3b3b31f;
+    border-radius: 5px;
+  }
+}

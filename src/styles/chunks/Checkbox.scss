@@ -1,0 +1,42 @@
+
+.checkboxOuter {
+  width: 30rem;  
+}
+input[type="checkbox"] {
+	display: none;
+
+	+ .label-text:before {
+			display: inline-block;
+      transition: all 0.2s ease-in-out;
+      margin: -6px 15px 0 0;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      border: 2px solid lighten($blackLight, 60%);
+      border-radius: 5px;
+      color: #ecf0f1;
+      content: '';
+	}
+	&:checked + .label-text:before {
+		background: $orange;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #ecf0f1;
+    content: '\2714';
+		border-color: $orange;
+	}
+
+}
+.label-text {
+	width: 100%;
+	color: $blackLight;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: block;
+	line-height: 3rem;
+	a {
+		color: $cyan;
+	}
+}

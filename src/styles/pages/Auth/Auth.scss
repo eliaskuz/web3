@@ -1,0 +1,84 @@
+
+///////////******* AUTH *******\\\\\\\\\\\
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://ico88-a.akamaihd.net/private-office/assets/lk_background.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+
+  & .go-to-ico {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("https://ico88-a.akamaihd.net/private-office/assets/cross-black.svg");
+    cursor: pointer;
+    right: 2rem;
+    background-size: contain;
+    top: 1rem;
+
+    @media (min-width: $desk) {
+      display: block;
+      top: 2rem;
+      right: 2rem;
+    }
+
+  }
+  & .logout {
+    position: absolute;
+    right: 2rem;
+    top: 0;
+    width: 4rem;
+    height: 4rem;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+  }
+
+  & .container-login {
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: $sweetMore;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+
+  @media (min-width: $pad) {
+    justify-content: start;
+    border-radius: 14px;
+    padding: 4rem;
+    flex-grow: 0;
+    width: 40rem;
+    margin: auto;
+    box-shadow: 0 0 21px transparentize(gray, .5);
+  }
+
+	& .headline {
+		font-weight: bold;
+    color: black;
+    letter-spacing: .1rem;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 4.5rem;
+    margin-top: 2rem;
+  }
+
+  & .account-link {
+    display: block;
+    font-size: 1.6rem;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    a {
+      color: $orange;
+      cursor: pointer;
+    }
+    }
+  }
+}
+

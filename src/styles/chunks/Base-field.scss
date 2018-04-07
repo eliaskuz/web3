@@ -1,0 +1,48 @@
+
+.outer-field {
+  margin-bottom: 3rem;
+  position: relative;
+
+ & .field {
+  border: none;
+  height: 4.8rem;
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 2.2rem;
+  font-size: 1.6rem;
+ }
+ & .error-label {
+  position: absolute;
+  top: calc(100% + .5rem);
+  color: $tomato;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-left: 2.2rem;
+ }
+}
+
+.outer-field--center{ 
+  text-align: center;
+}
+
+// THEME 2
+.purchase-widget {
+  .base-field {
+    margin-bottom: 3rem;
+
+    @media (min-width: $pad) {
+      width: 100% $i;
+    }
+
+    background-color: white $i;
+    > div {
+      left: 2rem;
+    }
+    margin-top: 0 $i;
+    input {
+      padding-left: 2rem $i;
+    }
+
+  }
+}

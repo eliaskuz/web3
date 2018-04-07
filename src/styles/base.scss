@@ -1,0 +1,205 @@
+
+html {
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+:global {
+  #private-office-injector {
+    font-family: 'Open Sans', sans-serif;
+    color: #4d4d4d;
+    background-color: #f1f4fb;
+    height: 100%;
+  }
+}
+
+
+body {
+  font-size: 1.4rem;
+  margin: 0;
+  min-width: 30rem;
+
+}
+
+.snack-bar {
+  z-index: 2;
+  text-align: center;
+  position: fixed;
+  bottom:0;
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  .snack-bar-wrapper {
+    display: flex;
+    z-index: 999;
+    background-color: #000;
+    position: relative;
+    width: 100%;
+    @media (min-width: $pad) {
+      width: auto;
+      min-width: 40rem;
+      border-radius: 5px $i;
+    }
+    line-height: 2rem $i;
+    font-size: 1.5rem $i;
+    justify-content: space-between;
+    .snack-bar-info {
+      height: auto $i;
+      background-color: #000;
+      color: #fff;
+      padding: 2rem $i;
+      text-align: center;
+      overflow: hidden;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .snack-bar-close {
+      height: auto $i;
+      position: absolute;
+      width: 2rem;
+      top:0;
+      bottom: 0;
+      right: 1rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      background-color: #000;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+  }
+
+}
+
+body, html, #root{
+  height: 100%;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+
+.inside-component {
+  background-color: white;
+  flex-grow: 1;
+  padding-top: 8rem;
+  @media (min-width: $desk) {
+    margin-left: 16.6%;
+  }
+
+  & .space-reset {
+     padding: 0;
+  }
+  & .sidebar {
+    background-color: $sweet;
+    @media (min-width: $desk) {
+      position: fixed;
+      left: 0;
+      top: 8rem;
+      bottom: 0;
+      width: 16.6%;
+    }
+  }
+  & .aside-header {
+	  flex: 1;
+    border-bottom: 1px lighten(gray, 40%) solid;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+
+    @media (min-width: $pad) {
+      padding-bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    & .user-desk {
+      @media (min-width: $lg) {
+        display: none $i;
+      }
+    }
+  }
+
+  & .menu-bar-icon-place {
+    margin-right: 1rem;
+  }
+  & .icon-place {
+    margin-left: 1rem;
+  }
+
+}
+
+.noScroll {
+  overflow-y: hidden;
+}
+
+
+.btn-logout {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+
+.buy-container {
+  .headline  {
+    margin: 2rem 0;
+    @media (min-width: $lg) {
+      margin-bottom: 5rem;
+      margin-top: 5rem;
+    }
+  }
+}
+
+
+.headline {
+	font-size: 4rem;
+	color: $blackLight;
+	margin-bottom: 3rem;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+

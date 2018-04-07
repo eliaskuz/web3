@@ -1,0 +1,40 @@
+.questionsBar {
+  padding: 0 2rem;
+  @media (min-width: $desk) {
+    padding-left: 5rem;
+  }
+  @media (min-width: $lg) {
+    padding-left: 0;
+  }
+
+  & .box {
+    border: 2px red solid;
+  }
+  & .questions-headline {
+    margin-top: 0;
+    margin-bottom: 8rem;
+    color: black;
+    font-weight: bold;
+    font-size: 3.6rem;
+  }
+  & .support-item {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 2.6rem;
+  }
+  & .questions-box {
+    flex: 1 1 50%;
+    min-width: 30rem;
+  }
+  & .support-text {
+    padding-right: 2rem;
+    flex: 1;
+  }
+  & .download-icon {
+    flex-shrink: 0;
+    margin-right: 2.7rem;
+  }
+}

@@ -1,0 +1,33 @@
+
+.regulations-text {
+
+  @media (min-width: $pad) {
+    max-width: 30rem;
+  }
+
+  & .list-regulations {
+    list-style: none;
+    padding: 0;
+    margin-top: -2rem;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    margin-bottom: 2rem;
+
+    li {
+      margin-bottom: 1.2rem;
+      a {
+        color: $orange;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  & .important {
+    margin: 0 .5rem;
+  }
+
+}

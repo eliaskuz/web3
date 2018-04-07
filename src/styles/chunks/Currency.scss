@@ -1,0 +1,30 @@
+.price-list {
+  padding: 0;
+  margin: 3rem 0 0 0;
+  flex: 1;
+  background-color: transparent;
+  border-radius: 10px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center;
+    color: $blackLight;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    border-bottom: 2px rgba(0, 0, 0, 0.1) solid;
+    cursor: pointer;
+    transition: .5s;
+    @media (min-width: $lg) {
+      &:hover, &.active {
+        border-color: $cyan;
+        color: $cyan;
+      }
+    }
+  }
+
+  & .icon-place {
+    margin-right: 1rem;
+  }
+}

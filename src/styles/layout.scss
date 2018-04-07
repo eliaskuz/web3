@@ -1,0 +1,35 @@
+.main-container {
+  min-height: calc(100vh - 8rem);
+}
+
+.main-col {
+  border-radius: 10px;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+
+
+  @media (min-width: $desk) {
+    padding-bottom: 3.5rem;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+  @media (min-width: $desk ) {
+    box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.1);
+  }
+  @media (min-width: $lg) {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+  @media (min-width: $desk) {
+    padding-left: 4rem  !important;
+    padding-right: 4rem  !important;
+  }
+
+}
+

@@ -1,0 +1,40 @@
+
+/// **** THEME **** \\\
+
+$cyan: #45c6cc;
+$cyanLight: lighten($cyan, 40%);
+$tomato: #F82A67;
+$blue: #4296BA;
+$blueDark: #4582B6;
+$blueVariant1: #4097bb;
+$purple: #676B9B;
+$purpleDark: #676c9d;
+$orange: #f15944;
+$sweet: #e6eaf2;
+$sweetMore: #f1f4fb;
+$sweetVariant1: #f8f7fc;
+$grayLightness: #b3b3b340;
+$primaryGradient: linear-gradient(to right, #f15944, #e4831c);
+$primaryGradientDisabled: linear-gradient(to right, #ccc, #b3b3b340);
+
+$blackLight: lighten(black, 30%);
+// $gray: darken($borderBar, 50%);
+$grayLight: lighten(black, 70%);
+$statisticHeaderColor: $sweetVariant1;
+$borderBoardColor: white;
+$priceListBorderColor: $statisticHeaderColor;
+$priceListColor: white;
+$priceListBorderColor: lighten(gray, 45%);
+$radius: 4px;
+
+/// **** BREAKPOINTS **** \\\
+
+$pad: 768px;
+$lg: 992px;
+$desk: 1200px;
+$largeDesk: 1400px;
+
+
+/// **** OTHER **** \\\
+
+$i: unquote("!Important");
