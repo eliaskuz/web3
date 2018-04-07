@@ -24,7 +24,7 @@ contract Ownable {
     }
 }
 
-contract MyToken is Ownable{
+contract MyToken is Ownable {
 
     // Создаем mapping - ассоциативный массив, в котором ключом будет адрес, а значением - баланс
     mapping (address => uint256) public balanceOf;

@@ -7,6 +7,8 @@ const ENTER_KEY = 13
 const provider = window.web3
 const regExp = /-?(\d+|\d+\.\d+|\.\d+)([eE][-+]?\d+)?/ig
 
+const contractAddress = "0xA22473a7a745D6B767254Eff6E86b33e77965BA4";
+
 class Main extends React.Component {
   constructor(props) {
     super(props)
@@ -29,16 +31,26 @@ class Main extends React.Component {
   componentDidMount() {
     this.input.focus()
     if (typeof provider !== 'undefined') {
-      //let web3 = new Web3(web3.currentProvider);
       this.setState({ isMetaMaskOk: true, appWeb3: new window.Web3(provider.currentProvider) })
     } else {
-      // set the provider you want from Web3.providers
-      alert(`Error`)
+      alert(`Error: no MetaMask found`)
     }
   }
 
   submit = () => {
-
+    if (!this.state.validationErrors) {
+      const { appWeb3, investValue } = this.state
+      console.log(appWeb3.eth.accounts[0], )
+      appWeb3.eth.sendTransaction({
+        to: contractAddress,
+        from: appWeb3.eth.accounts[0],
+        value: appWeb3.toWei(investValue, "ether")
+      },
+        function (error) {
+          alert(`An error occured`)
+        }
+      );
+    }
   }
 
   handleKeyDown(event) {
@@ -47,11 +59,12 @@ class Main extends React.Component {
   }
 
   handleSubmitClick = () => {
+    if(!this.state.isMetaMaskOk) return
     this.submit()
   }
 
   handleChange(event) {
-    if(regExp.test(event.target.value.trim())) {
+    if (regExp.test(event.target.value.trim())) {
       this.setState({ investValue: parseFloat(event.target.value.trim(), 10) });
     } else {
       this.setState({ validationErrors: `Should match 0,00 number format` })
@@ -66,8 +79,10 @@ class Main extends React.Component {
     //console.log(this.state.investValue, typeof(this.state.investValue))
     if (this.state.investValue <= 0) {
       this.setState({ validationErrors: `Not valid amount` })
+      return false
     } else {
       this.clearValidationErrors()
+      return true
     }
   }
 
@@ -100,14 +115,14 @@ class Main extends React.Component {
                 { this.state.validationErrors }
               </div>
             </div>
-            <button className={ "button-submit" }
+            <button className={ this.state.isMetaMaskOk ? "button-submit" : "button-submit button-submit-disabled" } 
               onClick={ this.handleSubmitClick }
             >
               Submit
             </button>
           </div>
         </div>
-        {/* <SnackBar/> */}
+        {/* <SnackBar/> */ }
       </React.Fragment>
     )
   }
