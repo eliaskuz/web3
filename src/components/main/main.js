@@ -63,7 +63,7 @@ class Main extends React.Component {
   }
 
   validate() {
-    console.log(this.state.investValue, typeof(this.state.investValue))
+    //console.log(this.state.investValue, typeof(this.state.investValue))
     if (this.state.investValue <= 0) {
       this.setState({ validationErrors: `Not valid amount` })
     } else {
