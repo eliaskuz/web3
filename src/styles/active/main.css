@@ -1961,11 +1961,12 @@ input[type="checkbox"] {
       margin-top: 2rem; }
     .auth .container-login .account-link {
       display: block;
+      margin-bottom: 1rem;
       font-size: 1.6rem;
       text-align: center;
       color: black;
       font-weight: bold; }
-      .auth .container-login .account-link a {
+      .auth .container-login .account-link strong {
         color: #f15944;
         cursor: pointer; }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { inject, observer, Provider } from 'mobx-react'
-import stores from './store'
+import stores from './components/store'
 import { Main } from './components/main'
 import '../src/styles/active/main.css'
 

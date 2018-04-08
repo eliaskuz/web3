@@ -15,6 +15,7 @@ class DApp extends React.Component {
     this.input.focus()
     if (typeof provider !== 'undefined') {
       this.props.appModel.updateProvider(true, new window.Web3(provider.currentProvider))
+      this.props.appModel.getCurrentParams()
     } else {
       this.props.snackModel.displayError(`no MetaMask found`)
     }
@@ -44,7 +45,9 @@ class DApp extends React.Component {
           onClick={ this.props.appModel.handleSubmitClick }
         >
           Submit
-            </button>
+        </button>
+        <span className='account-link'>Users posted: <strong>{`${this.props.appModel.likes}`}</strong></span>
+        <span className='account-link'>Currend msg:  <strong>{`${this.props.appModel.msg}`}</strong></span>
       </div>
     )
   }

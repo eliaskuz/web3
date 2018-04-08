@@ -73,11 +73,12 @@
 
   & .account-link {
     display: block;
+    margin-bottom: 1rem;
     font-size: 1.6rem;
     text-align: center;
     color: black;
     font-weight: bold;
-    a {
+    strong {
       color: $orange;
       cursor: pointer;
     }
