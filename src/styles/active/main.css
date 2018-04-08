@@ -1360,12 +1360,6 @@ html {
   font-size: 10px;
   -webkit-font-smoothing: antialiased; }
 
-:global #private-office-injector {
-  font-family: 'Open Sans', sans-serif;
-  color: #4d4d4d;
-  background-color: #f1f4fb;
-  height: 100%; }
-
 body {
   font-size: 1.4rem;
   margin: 0;
@@ -1912,6 +1906,9 @@ input[type="checkbox"] {
   background-size: cover;
   background-position: center;
   min-height: 100vh; }
+  @media (min-width: 768px) {
+    .auth {
+      flex-direction: row; } }
   .auth .go-to-ico {
     position: absolute;
     width: 2rem;

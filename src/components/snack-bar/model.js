@@ -1,3 +1,5 @@
+import { action, observable } from 'mobx'
+
 const DURATION = 4000
 
 class SnackModel {
@@ -43,8 +45,6 @@ class SnackModel {
   }
 }
 
-const snackModel = new SnackModel()
-
 export {
-  snackModel
+  SnackModel
 }

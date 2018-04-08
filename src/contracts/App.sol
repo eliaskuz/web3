@@ -1,9 +1,4 @@
-pragma solidity ^0.4.0;
-
-
-//Inteface
-//[{"constant":false,"inputs":[{"name":"_message","type":"string"}],"name":"setMessage","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_price","type":"uint256"}],"name":"setPrice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"price","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"lastDonator","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"message","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_token","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"}]
-
+pragma solidity ^0.4.11;
 
 interface AppToken {
     function payment(address _from, uint value) public returns (bool);
@@ -37,7 +32,7 @@ contract App is Ownable {
     uint public price = 10;
     uint public likes = 0;
 
-    function App(AppToken _token) public {
+    function App(AppToken _token) {
         token = _token;
     }
 
@@ -46,9 +41,9 @@ contract App is Ownable {
     }
 
     function setMessage(string _message) public returns (bool) {
-        if (token.payment(msg.sender, price)){
+        if (token.payment(msg.sender, price)) {
             message = _message;
-            likes++;
+            likes += 1;
             lastDonator = msg.sender;
             return true;
         }
@@ -57,3 +52,4 @@ contract App is Ownable {
         }
     }
 }
+//0xb1CC15c45d9b96B17a961BC364C8a5bc55fA2b29

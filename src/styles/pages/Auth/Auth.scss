@@ -4,6 +4,9 @@
 .auth {
   display: flex;
   flex-direction: column;
+  @media (min-width: $pad) {
+    flex-direction: row;
+  }
   background-image: url("https://ico88-a.akamaihd.net/private-office/assets/lk_background.jpg");
   background-size: cover;
   background-position: center;
